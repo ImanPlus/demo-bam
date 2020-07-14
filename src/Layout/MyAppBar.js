@@ -2,7 +2,7 @@ import React from "react";
 import clsx from 'clsx';
 import AppBar from '@material-ui/core/AppBar';
 
-import {makeStyles, useTheme} from '@material-ui/core/styles';
+import {makeStyles} from '@material-ui/core/styles';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
@@ -29,7 +29,6 @@ const useStyles = makeStyles((theme) => ({
 
 //----------------- Main Function -----------------
 const MyAppBar = ({props, valueOpen, drawerOpen}) => {
-  const theme = useTheme();
   const classes = useStyles();
 
   return (
@@ -50,9 +49,9 @@ const MyAppBar = ({props, valueOpen, drawerOpen}) => {
           <MenuIcon/>
         </IconButton>
         <Typography variant="h6" noWrap>
-          Persistent drawer
+          {props.title}
         </Typography>
-      </Toolbar>
+      </Toolbar>{console.log('open,props',valueOpen,props)}
     </AppBar>
   )
 }
