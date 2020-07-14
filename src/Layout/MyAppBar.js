@@ -25,6 +25,12 @@ const useStyles = makeStyles((theme) => ({
       duration: theme.transitions.duration.enteringScreen,
     }),
   },
+  menuButton: {
+    marginRight: theme.spacing(2),
+  },
+  hide: {
+    display: 'none',
+  },
 }))
 
 //----------------- Main Function -----------------
@@ -51,7 +57,7 @@ const MyAppBar = ({props, valueOpen, drawerOpen}) => {
         <Typography variant="h6" noWrap>
           {props.title}
         </Typography>
-      </Toolbar>{console.log('open,props',valueOpen,props)}
+      </Toolbar>{console.log('open,props', valueOpen, props)}
     </AppBar>
   )
 }
