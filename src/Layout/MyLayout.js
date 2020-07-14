@@ -28,11 +28,15 @@ function MyLayout(props) {
   const handleDrawerOpen = () => {
     setOpen(true);
   };
-
+  const handleDrawerClose = () => {
+    setOpen(false);
+  };
+  {console.log('open Layout:',open)}
   return (
     <div className={classes.root}>
       <CssBaseline/>
-      <MyAppBar valueOpen={open} drawerOpen={handleDrawerOpen}/>
+      <MyAppBar valueOpen={open} drawerOpen={handleDrawerOpen} props={props}/>
+      <MySidebar valueOpen={open} drawerClose={handleDrawerClose} props={props} />
     </div>
   )
 }
