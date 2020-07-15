@@ -48,7 +48,7 @@ const MyAppBar = ({props, valueOpen, drawerOpen}) => {
         <IconButton
           color="inherit"
           aria-label="open drawer"
-          onClick={drawerOpen()}
+          onClick={() => drawerOpen()}
           edge="start"
           className={clsx(classes.menuButton, valueOpen && classes.hide)}
         >
