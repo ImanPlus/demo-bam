@@ -61,7 +61,29 @@ const useSidebarStyles = makeStyles((theme) => ({
       display: 'contents',
       textDecoration: 'none',
     },
-  }
+  },
+  app_sidebar_content: {
+    display: 'flex',
+    flexDirection: 'column',
+    height: '100%',
+    overflowY: 'auto',
+    overflowX: 'visible',
+  },
+  app_sidebar_content_widget: {
+    display: 'flex',
+    flexDirection: 'column',
+  },
+  app_sidebar_content_widget_top: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    padding: theme.spacing(0, 1),
+    marginTop: 25,
+    '& span':{
+      fontWeight: 700,
+      color: '#3c44b1',
+    },
+  },
 }));
 
 //----------------- Main Function -----------------
@@ -79,6 +101,7 @@ const MySidebar = ({props, valueOpen, drawerClose}) => {
         paper: classes.drawerPaper,
       }}
     >
+      {/*----------------- Header Sidebar -----------------*/}
       <div className={classes.drawerHeader}>
         <div className={classes.app_sidebar_logo}>
           <a href="/">
@@ -97,11 +120,22 @@ const MySidebar = ({props, valueOpen, drawerClose}) => {
           {theme.direction === 'ltr' ? <ChevronLeftIcon/> : <ChevronRightIcon/>}
         </IconButton>
       </div>
-
       <Divider/>
-
+      {/*----------------- Content Sidebar -----------------*/}
+      <div className={classes.app_sidebar_content}>
+        <div className={classes.app_sidebar_content_widget}>
+          <div className={classes.app_sidebar_content_widget_top}>
+            <div>
+              <span>WATCH LIST</span>
+            </div>
+            <div>
+              <a href="#/" title="View details">See all</a>
+            </div>
+          </div>
+        </div>
+      </div>
       <Divider/>
-
+      {/*----------------- Footer Sidebar -----------------*/}
     </Drawer>
   );
 };
