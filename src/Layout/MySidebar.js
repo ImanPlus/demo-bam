@@ -21,7 +21,7 @@ const useSidebarStyles = makeStyles((theme) => ({
   drawerHeader: {
     display: 'flex',
     alignItems: 'center',
-    padding: theme.spacing(0, 1),
+    padding: theme.spacing(2.5, 3),
     // necessary for content to be below app bar
     ...theme.mixins.toolbar,
     justifyContent: 'space-between',
@@ -77,12 +77,54 @@ const useSidebarStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
-    padding: theme.spacing(0, 1),
+    padding: theme.spacing(0, 3),
     marginTop: 25,
-    '& span':{
+    '& span': {
       fontWeight: 700,
       color: '#3c44b1',
     },
+    '& a': {
+      color: '#3498DB',
+    },
+  },
+  app_sidebar_content_widget_down: {
+    display: 'flex',
+    flexDirection: 'row',
+    padding: theme.spacing(1.5, 3),
+    justifyContent: 'flex-start',
+    alignContent: 'flex-start',
+  },
+  app_sidebar_content_widget_down_svg: {
+    color: '#f83245',
+    fill: 'currentColor',
+    verticalAlign: 'middle',
+    width: 40,
+    height: 40,
+  },
+  app_sidebar_content_widget_down_text_up_left: {
+    '& b': {
+      fontSize:'17px',
+    },
+  },
+  app_sidebar_content_widget_down_text_up:{
+    display:'flex',
+    flexDirection:'row',
+  },
+  app_sidebar_content_widget_down_text_up_right:{
+    backgroundColor:'#fff5f6',
+    height: '20px',
+    lineHeight: '21px',
+    color: '#f83245',
+    marginLeft: '.5rem',
+  },
+  app_sidebar_content_widget_down_text_down:{
+    color: '#070919',
+    fontSize: '.875rem',
+    opacity: .4,
+  },
+  app_sidebar_content_widget_down_text:{
+    display:'flex',
+    flexDirection:'column',
   },
 }));
 
@@ -130,6 +172,20 @@ const MySidebar = ({props, valueOpen, drawerClose}) => {
             </div>
             <div>
               <a href="#/" title="View details">See all</a>
+            </div>
+          </div>
+          <div className={classes.app_sidebar_content_widget_down}>
+            <div className={classes.app_sidebar_content_widget_down_svg}>
+              <svg>
+                <path d="M16 18l2.29-2.29-4.88-4.88-4 4L2 7.41 3.41 6l6 6 4-4 6.3 6.29L22 12v6h-6z"></path>
+              </svg>
+            </div>
+            <div className={classes.app_sidebar_content_widget_down_text}>
+              <div className={classes.app_sidebar_content_widget_down_text_up}>
+                <div className={classes.app_sidebar_content_widget_down_text_up_left}><b>2.4895 BTC</b></div>
+                <div className={classes.app_sidebar_content_widget_down_text_up_right}>-8%</div>
+              </div>
+              <div className={classes.app_sidebar_content_widget_down_text_down}>$16,497</div>
             </div>
           </div>
         </div>
