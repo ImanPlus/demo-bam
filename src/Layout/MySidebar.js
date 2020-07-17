@@ -70,6 +70,7 @@ const useSidebarStyles = makeStyles((theme) => ({
     overflowY: 'auto',
     overflowX: 'visible',
   },
+  //----------------- Widget Style -----------------
   app_sidebar_content_widget: {
     display: 'flex',
     flexDirection: 'column',
@@ -150,6 +151,18 @@ const useSidebarStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     padding: theme.spacing(1.5, 3),
   },
+
+  sidebar_header: {
+    color: 'rgba(7,9,25,.85)',
+    textTransform: 'uppercase',
+    fontSize: '.83333rem',
+    padding: '1rem 1.5rem .75rem',
+    height: 'auto',
+    transition: 'all .2s ease-in-out',
+    whiteSpace: 'nowrap',
+    margin: 0,
+    position: 'relative',
+  },
 }));
 
 //----------------- Main Function -----------------
@@ -218,6 +231,9 @@ const MySidebar = ({props, valueOpen, drawerClose}) => {
               <Button id="bt2"> Withdraw </Button>
             </div>
           </div>
+        </div>
+        <div className={classes.sidebar_header}>
+          <span>Navigation</span>
         </div>
       </div>
       <Divider/>
