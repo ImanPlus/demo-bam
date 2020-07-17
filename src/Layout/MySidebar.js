@@ -7,6 +7,7 @@ import IconButton from '@material-ui/core/IconButton';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import Divider from '@material-ui/core/Divider';
+import Button from '@material-ui/core/Button';
 
 //----------------- Styles -----------------
 const drawerWidth = 340;
@@ -103,28 +104,51 @@ const useSidebarStyles = makeStyles((theme) => ({
   },
   app_sidebar_content_widget_down_text_up_left: {
     '& b': {
-      fontSize:'17px',
+      fontSize: '17px',
     },
   },
-  app_sidebar_content_widget_down_text_up:{
-    display:'flex',
-    flexDirection:'row',
+  app_sidebar_content_widget_down_text_up: {
+    display: 'flex',
+    flexDirection: 'row',
   },
-  app_sidebar_content_widget_down_text_up_right:{
-    backgroundColor:'#fff5f6',
+  app_sidebar_content_widget_down_text_up_right: {
+    backgroundColor: '#fff5f6',
     height: '20px',
     lineHeight: '21px',
     color: '#f83245',
     marginLeft: '.5rem',
   },
-  app_sidebar_content_widget_down_text_down:{
+  app_sidebar_content_widget_down_text_down: {
     color: '#070919',
     fontSize: '.875rem',
     opacity: .4,
   },
-  app_sidebar_content_widget_down_text:{
-    display:'flex',
-    flexDirection:'column',
+  app_sidebar_content_widget_down_text: {
+    display: 'flex',
+    flexDirection: 'column',
+  },
+  app_sidebar_content_widget_buttons: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    // '& palette':{
+    //   primary: 'green',
+    // },
+    '& button': {
+      boxShadow: '0 0.25rem 0.55rem rgba(27,201,67,.35)',
+      color: '#fff',
+      fontSize: '.83333rem',
+      paddingLeft: '1.25rem',
+      paddingRight: '1.25rem',
+      fontWeight: 700,
+    },
+    '& #bt1': {background: '#E91E63',},
+    '& #bt2': {background: '#1bc943'},
+  },
+  app_sidebar_spacer: {
+    display: 'flex',
+    flexDirection: 'column',
+    padding: theme.spacing(1.5, 3),
   },
 }));
 
@@ -143,7 +167,7 @@ const MySidebar = ({props, valueOpen, drawerClose}) => {
         paper: classes.drawerPaper,
       }}
     >
-      {/*----------------- Header Sidebar -----------------*/}
+      {/*----------------- Sidebar Header  -----------------*/}
       <div className={classes.drawerHeader}>
         <div className={classes.app_sidebar_logo}>
           <a href="/">
@@ -163,7 +187,7 @@ const MySidebar = ({props, valueOpen, drawerClose}) => {
         </IconButton>
       </div>
       <Divider/>
-      {/*----------------- Content Sidebar -----------------*/}
+      {/*----------------- Sidebar Content  -----------------*/}
       <div className={classes.app_sidebar_content}>
         <div className={classes.app_sidebar_content_widget}>
           <div className={classes.app_sidebar_content_widget_top}>
@@ -174,24 +198,30 @@ const MySidebar = ({props, valueOpen, drawerClose}) => {
               <a href="#/" title="View details">See all</a>
             </div>
           </div>
-          <div className={classes.app_sidebar_content_widget_down}>
-            <div className={classes.app_sidebar_content_widget_down_svg}>
-              <svg>
-                <path d="M16 18l2.29-2.29-4.88-4.88-4 4L2 7.41 3.41 6l6 6 4-4 6.3 6.29L22 12v6h-6z"></path>
-              </svg>
-            </div>
-            <div className={classes.app_sidebar_content_widget_down_text}>
-              <div className={classes.app_sidebar_content_widget_down_text_up}>
-                <div className={classes.app_sidebar_content_widget_down_text_up_left}><b>2.4895 BTC</b></div>
-                <div className={classes.app_sidebar_content_widget_down_text_up_right}>-8%</div>
+          <div className={classes.app_sidebar_spacer}>
+            <div className={classes.app_sidebar_content_widget_down}>
+              <div className={classes.app_sidebar_content_widget_down_svg}>
+                <svg>
+                  <path d="M16 18l2.29-2.29-4.88-4.88-4 4L2 7.41 3.41 6l6 6 4-4 6.3 6.29L22 12v6h-6z"></path>
+                </svg>
               </div>
-              <div className={classes.app_sidebar_content_widget_down_text_down}>$16,497</div>
+              <div className={classes.app_sidebar_content_widget_down_text}>
+                <div className={classes.app_sidebar_content_widget_down_text_up}>
+                  <div className={classes.app_sidebar_content_widget_down_text_up_left}><b>2.4895 BTC</b></div>
+                  <div className={classes.app_sidebar_content_widget_down_text_up_right}>-8%</div>
+                </div>
+                <div className={classes.app_sidebar_content_widget_down_text_down}>$16,497</div>
+              </div>
+            </div>
+            <div className={classes.app_sidebar_content_widget_buttons}>
+              <Button id="bt1"> Deposit </Button>
+              <Button id="bt2"> Withdraw </Button>
             </div>
           </div>
         </div>
       </div>
       <Divider/>
-      {/*----------------- Footer Sidebar -----------------*/}
+      {/*----------------- Sidebar Footer  -----------------*/}
     </Drawer>
   );
 };
