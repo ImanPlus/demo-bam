@@ -42,8 +42,7 @@ const useStyles = makeStyles((theme) => ({
   appBar_Left: {
     display: 'flex',
     flexDirection: 'row',
-    verticalAlign: 'middle',
-    // alignItems:'flex-end',
+    // verticalAlign: 'middle',
     alignItems: 'center',
   },
   //----------------- Search Style -----------------
@@ -85,6 +84,76 @@ const useStyles = makeStyles((theme) => ({
         width: '20ch',
       },
     },
+  },
+
+  appHeader_widget: {
+    display: 'flex',
+    flexDirection: 'row',
+  },
+  appHeader_widget_items: {
+    display: 'flex',
+    flexDirection: 'row',
+
+    marginLeft: 8,
+
+  },
+  appHeader_widget_items_svg: {
+    paddingTop: 8,
+    fill: 'currentColor',
+    width: 40,
+    height: 40,
+    '& #red': {color: '#f83245'},
+    '& #green': {color: '#27AE60'},
+  },
+  appHeader_widget_items_text: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+  },
+  appHeader_widget_items_text_uppercase: {
+    textTransform: 'uppercase',
+    fontSize: '.875rem',
+    opacity: .6,
+  },
+  appHeader_widget_items_text_price: {
+    display: 'flex',
+    flexDirection: 'row',
+    '& span': {
+      fontWeight: 700,
+      fontSize: '1.15rem',
+      lineHeight: 1,
+    },
+    '& small': {
+      paddingRight: '.25rem',
+      opacity: .6,
+      fontSize: '80%',
+      fontWeight: 400,
+    },
+  },
+  appHeader_widget_items_text_badge_danger: {
+    backgroundColor: '#fff5f6',
+    height: '20px',
+    lineHeight: '21px',
+    color: '#f83245',
+    marginLeft: '.5rem',
+    borderRadius: '.2rem',
+    fontSize: '78%',
+    fontWeight: 700,
+  },
+  appHeader_widget_items_text_badge_success: {
+    backgroundColor: '#e5f9ed',
+    height: '20px',
+    lineHeight: '21px',
+    color: '#1bc943',
+    marginLeft: '.5rem',
+    borderRadius: '.2rem',
+    fontSize: '78%',
+    fontWeight: 700,
+  },
+  appHeader_widget_items_generalSec_text: {
+    display: 'flex',
+    flexDirection: 'row',
+    marginLeft: 27,
   },
 }))
 
@@ -129,6 +198,48 @@ const MyAppBar = ({props, valueOpen, drawerOpen}) => {
               }}
               inputProps={{'aria-label': 'search'}}
             />
+          </div>
+          <div className={classes.appHeader_widget}>
+            <div className={classes.appHeader_widget_items}>
+              <div className={classes.appHeader_widget_items_generalSec_text}>
+                <div className={classes.appHeader_widget_items_svg}>
+                  <svg id="red">
+                    <path d="M16 18l2.29-2.29-4.88-4.88-4 4L2 7.41 3.41 6l6 6 4-4 6.3 6.29L22 12v6h-6z"></path>
+                  </svg>
+                </div>
+                <div className={classes.appHeader_widget_items_text}>
+                <span className={classes.appHeader_widget_items_text_uppercase}>
+                  <small>Current losses</small>
+                </span>
+                  <div className={classes.appHeader_widget_items_text_price}>
+                  <span>
+                    <small>$</small>
+                    46,362
+                  </span>
+                    <div className={classes.appHeader_widget_items_text_badge_danger}>-8%</div>
+                  </div>
+                </div>
+              </div>
+              <div className={classes.appHeader_widget_items_generalSec_text}>
+                <div className={classes.appHeader_widget_items_svg}>
+                  <svg id="green">
+                    <path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6h-6z"></path>
+                  </svg>
+                </div>
+                <div className={classes.appHeader_widget_items_text}>
+                <span className={classes.appHeader_widget_items_text_uppercase}>
+                  <small>Lifetime profits</small>
+                </span>
+                  <div className={classes.appHeader_widget_items_text_price}>
+                  <span>
+                    <small>$</small>
+                    34,546
+                  </span>
+                    <div className={classes.appHeader_widget_items_text_badge_success}>+13%</div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div>grgtrgtrgrt</div>
