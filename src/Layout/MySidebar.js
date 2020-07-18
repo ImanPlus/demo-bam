@@ -127,6 +127,10 @@ const useSidebarStyles = makeStyles((theme) => ({
     lineHeight: '21px',
     color: '#f83245',
     marginLeft: '.5rem',
+    borderRadius: '.2rem',
+    fontWeight: 700,
+    fontSize:'78%',
+
   },
   app_sidebar_content_widget_down_text_down: {
     color: '#070919',
