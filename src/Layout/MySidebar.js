@@ -30,12 +30,21 @@ const useSidebarStyles = makeStyles((theme) => ({
   appSidebarLogoIcon: {
     background: '#3c44b1',
     boxShadow: '1px 1px 3px rgba(7,9,25,.2)',
+
+    // animationName: 'spin',
+    // animationDuration: '5000ms',
+    // animationIterationCount: 'infinite',
+    // animationTimingFunction: 'linear',
+    // transform: [{rotate: '360deg'}],
+
+
     //   '& img':{
     // width: '26px',
     // margin: '0 auto',
     // -webkitAanimation: 'logo-spin 20s linear infinite',
     // animation: 'logo-spin 20s linear infinite',
     //   },
+
   },
   app_sidebar_logo_text: {
     lineHeight: 1,
