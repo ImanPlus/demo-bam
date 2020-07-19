@@ -45,6 +45,11 @@ const useStyles = makeStyles((theme) => ({
     // verticalAlign: 'middle',
     alignItems: 'center',
   },
+  appBar_right: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
   //----------------- Search Style -----------------
   search: {
     position: 'relative',
@@ -85,7 +90,7 @@ const useStyles = makeStyles((theme) => ({
       },
     },
   },
-
+//----------------- Widget Style -----------------
   appHeader_widget: {
     display: 'flex',
     flexDirection: 'row',
@@ -93,9 +98,7 @@ const useStyles = makeStyles((theme) => ({
   appHeader_widget_items: {
     display: 'flex',
     flexDirection: 'row',
-
     marginLeft: 8,
-
   },
   appHeader_widget_items_svg: {
     paddingTop: 8,
@@ -154,6 +157,66 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'row',
     marginLeft: 27,
+  },
+//----------------- Avatar Style -----------------
+  appBar_right_avatar: {
+    display: 'flex',
+    flexDirection: 'row',
+    marginRight: '.25rem',
+    position: 'relative',
+    fontSize: '1.2rem',
+    transition: 'all .2s ease-in-out',
+    padding: 0,
+  },
+  avatar_Badge_root: {
+    display: 'inline-flex',
+    position: 'relative',
+    flexShrink: 0,
+    verticalAlign: 'middle',
+  },
+  avatar_icon: {
+    '& img': {
+      borderRadius: '.65rem',
+      boxShadow: '0 0 0 3px #fff',
+      overflow: 'hidden',
+      display: 'block',
+      width: 44,
+      height: 44,
+      lineHeight: 44,
+      transition: 'all .2s ease-in-out',
+      opacity: 1,
+    },
+
+  },
+  avatar_light: {
+    color: 'var(--success)',
+    backgroundColor: '#1bc943',
+    border: '1px solid currentColor',
+    boxShadow: '0 0 0 2px #fff',
+    right: '14%',
+    bottom: '14%',
+    transform: 'scale(1) translate(50%, 50%)',
+    transformOrigin: '100% 100%',
+    height: 8,
+    padding: 0,
+    minWidth: 8,
+    borderRadius: 4,
+    zIndex: 1,
+    position: 'absolute',
+    display: 'flex',
+    flexWrap: 'wrap',
+    fontSize: '0.75rem',
+    boxSizing: 'border-box',
+    transition: 'transform 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms',
+    animation: 'jss209 1.2s infinite ease-in-out',
+    animationDuration: '1.2s',
+    animationTimingFunction: 'ease-in-out',
+    animationDelay: '0s',
+    animationIterationCount: 'infinite',
+    animationDirection: 'normal',
+    animationFillMode: 'none',
+    animationPlayState: 'running',
+    animationName: 'jss209',
   },
 }))
 
@@ -242,7 +305,21 @@ const MyAppBar = ({props, valueOpen, drawerOpen}) => {
             </div>
           </div>
         </div>
-        <div>grgtrgtrgrt</div>
+        <div className={classes.appBar_right}>
+          <div className={classes.appBar_right_avatar}>
+            <span className={classes.avatar_Badge_root}>
+              <div className={classes.avatar_icon}>
+                <img
+                  src="https://demo.uifort.com/bamburgh-react-crypto-application-pro-demo/static/media/avatar3.d5f40349.jpg"
+                  alt="avatar"
+                />
+              </div>
+              <span className={classes.avatar_light}></span>
+            </span>
+          </div>
+          <div className={classes.appBar_right_profile}></div>
+          grgtrgtrgrt
+        </div>
       </Toolbar>{console.log('open,props', valueOpen, props)}
     </AppBar>
   )
