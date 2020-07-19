@@ -218,6 +218,33 @@ const useStyles = makeStyles((theme) => ({
     animationPlayState: 'running',
     animationName: 'jss209',
   },
+  appBar_right_profile: {
+    display: 'flex',
+    flexDirection: 'column',
+    paddingLeft: '.5rem',
+  },
+  text_success: {
+    color: '#1bc943',
+    '& small': {
+      fontSize: '80%',
+      fontWeight: 400,
+    },
+  },
+  text_weight_bold: {
+    fontWeight: 700,
+  },
+  appBar_right_profile_content: {
+    paddingLeft: '1rem',
+    '& svg': {
+      overflow: 'visible',
+      width: '0.625em',
+      opacity: .5,
+      display: 'inline-block',
+      fontSize: 'inherit',
+      height: '1em',
+      verticalAlign: '-0.125em',
+    },
+  },
 }))
 
 //----------------- Main Function -----------------
@@ -317,8 +344,22 @@ const MyAppBar = ({props, valueOpen, drawerOpen}) => {
               <span className={classes.avatar_light}></span>
             </span>
           </div>
-          <div className={classes.appBar_right_profile}></div>
-          grgtrgtrgrt
+          <div className={classes.appBar_right_profile}>
+            <span className={classes.text_success}>
+              <small>Account verified</small>
+            </span>
+            <div className={classes.text_weight_bold}>Satoshi Nakamoto</div>
+          </div>
+          <span className={classes.appBar_right_profile_content}>
+           <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="angle-down"
+                className="svg-inline--fa fa-angle-down fa-w-10 opacity-5" role="img" xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 320 512"
+           >
+             <path fill="currentColor"
+                   d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z">
+             </path>
+           </svg>
+          </span>
         </div>
       </Toolbar>{console.log('open,props', valueOpen, props)}
     </AppBar>
